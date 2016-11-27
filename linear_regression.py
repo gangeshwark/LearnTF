@@ -11,7 +11,8 @@ b = tf.Variable(tf.zeros([1]))
 y = W * x_data + b
 print y
 loss = tf.reduce_mean(tf.square( y - y_data))
-optimizer = tf.train.AdamOptimizer(0.1)
+learning_rate = 0.1
+optimizer = tf.train.AdamOptimizer(learning_rate)
 train = optimizer.minimize(loss)
 
 init = tf.initialize_all_variables()

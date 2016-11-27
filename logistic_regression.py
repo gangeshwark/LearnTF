@@ -8,8 +8,12 @@ def sig(x):
 
 
 #Generate random data - 2M data points
-x_data = np.random.rand(2000000).astype(np.float32)
-y_data = sig(x_data * 9 + 7.8)
+data_points = 2000000
+x_data = np.random.rand(data_points).astype(np.float32)
+#y_data = sig(x_data * 9 + 7.8)
+#tensorflow's inbuilt sigmoid funtion
+y_data = tf.nn.sigmoid(x_data * 9 + 7.8)
+
 
 W = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
 b = tf.Variable(tf.zeros([1]))
